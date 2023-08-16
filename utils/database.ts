@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, {ConnectOptions} from 'mongoose';
 
 let isConnected: boolean = false;
 
@@ -13,7 +13,7 @@ export const connectToDB = async() => {
       dbName: 'share_prompt',
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    })
+    } as ConnectOptions)
     isConnected = true
     console.log('MongoDB connected')
   } catch(error) {
